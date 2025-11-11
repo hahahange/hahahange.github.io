@@ -580,6 +580,8 @@ h6 {
 .scroll-top:hover {
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
   color: var(--contrast-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+  transform: translateY(-2px); 
 }
 
 .scroll-top.active {
@@ -751,6 +753,8 @@ section,
 
 .hero .btn-get-started:hover {
   background: color-mix(in srgb, var(--accent-color) 90%, white 20%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+  transform: translateY(-2px); 
 }
 
 @media (max-width: 768px) {
@@ -1365,6 +1369,8 @@ section,
 .contact .info-item:hover i {
   background: var(--accent-color);
   color: var(--contrast-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+  transform: translateY(-2px); 
 }
 
 .contact .php-email-form {
