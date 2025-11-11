@@ -13,9 +13,9 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Comic Sans MS",  sans-serif;
-  --heading-font: "Comic Sans MS",  sans-serif;
-  --nav-font: "Comic Sans MS",  sans-serif;
+  --default-font: 'Comic Sans MS', cursive;
+  --heading-font: 'Comic Sans MS', cursive;
+  --nav-font: 'Comic Sans MS', cursive;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
