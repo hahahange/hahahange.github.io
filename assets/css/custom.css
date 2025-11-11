@@ -324,13 +324,14 @@ h6 {
     visibility: visible;
   }
 
-  .navmenu .dropdown .dropdown ul {
+  .navmenu .dropdown .dropdown ol {
     top: 0;
     left: -90%;
     visibility: hidden;
+    list-style: decimal;
   }
 
-  .navmenu .dropdown .dropdown:hover>ul {
+  .navmenu .dropdown .dropdown:hover>ol {
     opacity: 1;
     top: 0;
     left: -100%;
