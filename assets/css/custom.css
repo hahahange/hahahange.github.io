@@ -42,13 +42,13 @@
 
 .light-background {
   --background-color: #b4b746;
-  --surface-color: #327473;
+  --surface-color:  #483f50;
 }
 
 .dark-background {
   --background-color: #483f50;
-  --default-color: #4da8ad;
-  --heading-color: #4da8ad;
+  --default-color:  #483f50;
+  --heading-color:  #483f50;
   --surface-color: #b4b746;
   --contrast-color: # #483f50;
 }
