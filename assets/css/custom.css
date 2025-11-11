@@ -162,7 +162,7 @@ h6 {
 }
 
 .header .logo h1 {
-  font-size: 38px;
+  font-size: 50px;
   margin: 0;
   font-weight: 350;
   text-transform: uppercase;
@@ -178,7 +178,7 @@ h6 {
   padding-left: 6px;
   display: inline-block;
   transition: 0.3s;
-  font-size: 16px;
+  font-size: 30px;
 }
 
 .header .header-social-links a:hover {
@@ -186,7 +186,7 @@ h6 {
 }
 
 .header .header-social-links a i {
-  line-height: 0px;
+  line-height: 10px;
 }
 
 @media (max-width: 1200px) {
@@ -236,10 +236,10 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    font-size: 15px;
+    font-size: 40px;
     padding: 0 2px;
     font-family: var(--nav-font);
-    font-weight: 400;
+    font-weight: 350;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -250,7 +250,7 @@ h6 {
 
   .navmenu a i,
   .navmenu a:focus i {
-    font-size: 12px;
+    font-size: 24px;
     line-height: 0;
     margin-left: 5px;
     transition: 0.3s;
@@ -303,13 +303,13 @@ h6 {
 
   .navmenu .dropdown ul a {
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: 30px;
     text-transform: none;
     color: var(--nav-dropdown-color);
   }
 
   .navmenu .dropdown ul a i {
-    font-size: 12px;
+    font-size: 24px;
   }
 
   .navmenu .dropdown ul a:hover,
@@ -343,7 +343,7 @@ h6 {
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
-    font-size: 28px;
+    font-size: 40px;
     line-height: 2;
     margin-right: 10px;
     cursor: pointer;
@@ -376,7 +376,7 @@ h6 {
     color: var(--nav-dropdown-color);
     padding: 10px 20px;
     font-family: var(--nav-font);
-    font-size: 17px;
+    font-size: 34px;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -387,7 +387,7 @@ h6 {
 
   .navmenu a i,
   .navmenu a:focus i {
-    font-size: 12px;
+    font-size: 24px;
     line-height: 0;
     margin-left: 5px;
     width: 30px;
@@ -471,7 +471,7 @@ h6 {
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-size: 14px;
+  font-size: 28px;
   padding: 40px 0;
   position: relative;
 }
