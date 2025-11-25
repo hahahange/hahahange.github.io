@@ -503,6 +503,16 @@ h6 {
   border-color: var(--accent-color);
 }
 
+@keyframes rotateIcon {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.footer .social a {
+  display: inline-block;
+  animation: rotateIcon 6s linear infinite;
+}
+
 .footer .credits {
   margin-top: 10px;
   font-size: 13px;
