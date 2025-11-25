@@ -472,10 +472,24 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background: var(--surface-color);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
   font-size: 28px;
   padding: 40px 0;
   position: relative;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 
@@ -984,6 +998,15 @@ section,
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+#pentagon {
+      position: relative;
+      width: 54px;
+      box-sizing: content-box;
+      border-width: 50px 18px 0;
+      border-style: solid;
+      border-color: red transparent;
 }
 
 .resume .resume-item {
