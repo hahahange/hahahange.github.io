@@ -805,7 +805,7 @@ section,
   100% { transform: translate(0, 0); }
 }
 
-.about .img-fluid img {
+#about img.img-fluid {
   animation: floatAround 8s ease-in-out infinite;
 }
 
