@@ -1530,14 +1530,16 @@ section,
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
 #resume .floating-shape {
-  position: relative;
-  width: 54px;
-  box-sizing: content-box;
-  border-width: 50px 18px 0;
-  border-style: solid;
-  border-color: red;
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 50px solid red;
+  transform-origin: center bottom;
   animation: rotateShape 6s linear infinite;
+  position: relative;
 }
 
 
