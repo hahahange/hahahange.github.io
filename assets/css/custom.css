@@ -1473,15 +1473,34 @@ section,
 }
 
 
+
 .loader {
   width: 15px;
   aspect-ratio: 1;
   border-radius: 50%;
   animation: l5 1s infinite linear alternate;
+  display: inline-block;
 }
+
 @keyframes l5 {
-    0%  {box-shadow: 20px 0 #000, -20px 0 #0002;background: #000 }
-    33% {box-shadow: 20px 0 #000, -20px 0 #0002;background: #0002}
-    66% {box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002}
-    100%{box-shadow: 20px 0 #0002,-20px 0 #000; background: #000 }
+  0%  {box-shadow: 20px 0 #000, -20px 0 #0002;background: #000 }
+  33% {box-shadow: 20px 0 #000, -20px 0 #0002;background: #0002}
+  66% {box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002}
+  100%{box-shadow: 20px 0 #0002,-20px 0 #000; background: #000 }
+}
+
+
+.loading-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  margin-left: 0; /* left aligned */
+}
+
+
+.loading-text {
+  font-size: 20px;
+  color: var(--default-color);
+  font-family: var(--heading-font);
 }
