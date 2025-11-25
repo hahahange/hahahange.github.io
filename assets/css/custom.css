@@ -1537,7 +1537,7 @@ section,
   border-width: 50px 18px 0;
   border-style: solid;
   border-color: red;
-  animation: rotateSocial 6s linear infinite;
+  animation: rotateShape 6s linear infinite;
 }
 
 
