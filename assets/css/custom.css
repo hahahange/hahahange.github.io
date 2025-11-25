@@ -1497,7 +1497,6 @@ section,
   100% {transform: rotate(360deg)}
 }
 
-
 .loading-text {
   font-size: 20px;
   color: var(--default-color);
