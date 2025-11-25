@@ -498,6 +498,26 @@ h6 {
   transition: 0.3s;
 }
 
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(180deg)
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+.social-links a {
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+    animation-name: rotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
 .footer .social-links a:hover {
   color: var(--accent-color);
   border-color: var(--accent-color);
