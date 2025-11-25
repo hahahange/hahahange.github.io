@@ -1526,7 +1526,10 @@ section,
   font-family: var(--heading-font);
 }
 
-
+@keyframes rotateShape {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 #resume .floating-shape {
   position: relative;
   width: 54px;
@@ -1534,4 +1537,7 @@ section,
   border-width: 50px 18px 0;
   border-style: solid;
   border-color: red;
+  animation: rotateSocial 6s linear infinite;
 }
+
+
