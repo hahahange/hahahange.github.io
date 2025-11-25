@@ -25,7 +25,7 @@
   --heading-color: #4598f4; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #cfc8d0; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #483f50; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color:   #483f50; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --contrast-color: #483f50; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -50,7 +50,7 @@
   --default-color:  #483f50;
   --heading-color:  #483f50;
   --surface-color: #b4b746;
-  --contrast-color: # #483f50;
+  --contrast-color: #483f50;
 }
 
 /* Smooth scroll */
@@ -503,15 +503,6 @@ h6 {
   border-color: var(--accent-color);
 }
 
-@keyframes rotateIcon {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.footer .social a {
-  display: inline-block;
-  animation: rotateIcon 6s linear infinite;
-}
 
 .footer .credits {
   margin-top: 10px;
@@ -807,17 +798,7 @@ section,
   line-height: 5;
 }
 
-@keyframes floatAround {
-  0%   { transform: translate(0, 0); }
-  25%  { transform: translate(-5px, -10px); }
-  50%  { transform: translate(5px, -5px); }
-  75%  { transform: translate(-5px, 5px); }
-  100% { transform: translate(0, 0); }
-}
 
-#about img.img-fluid {
-  animation: floatAround 8s ease-in-out infinite;
-}
 
 /*--------------------------------------------------------------
 # Skills Section
@@ -1449,6 +1430,45 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+
+@keyframes rotateSocial {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
+
+
+.footer .social-links a {
+  display: inline-block;          
+  transform-origin: 50% 50%;
+  animation: rotateSocial 6s linear infinite;
+
+}
+
+
+
+@keyframes floatAbout {
+  0%   { transform: translate3d(0, 0, 0); }
+  20%  { transform: translate3d(-6px, -8px, 0); }
+  40%  { transform: translate3d(6px, -4px, 0); }
+  60%  { transform: translate3d(-4px, 6px, 0); }
+  80%  { transform: translate3d(4px, 4px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+
+#about img.img-fluid {
+  display: block;             
+  will-change: transform;
+  animation: floatAbout 8s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .footer .social-links a,
+  #about img.img-fluid {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
