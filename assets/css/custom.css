@@ -1541,74 +1541,54 @@ section,
   animation: rotateShape 6s linear infinite;
   position: relative;
 }
-#memory-game {
-  padding: 0 0 20px 20px;
-  margin-top: -2px;
-  border-left: 2px solid var(--accent-color);
-  position: relative;
-}
 
-#difficulty, .game-controls button {
-  margin: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-}
-
-#stats {
-  margin: 1rem 0;
-}
 
 #game-board {
   display: grid;
+  grid-template-columns: repeat(4, 100px);
   gap: 10px;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 50px;
 }
 
-.memory-game .card {
-  width: 80px;
-  height: 80px;
+.card {
+  width: 100px;
+  height: 100px;
   perspective: 1000px;
   cursor: pointer;
 }
 
-.memory-game .card-inner {
-  position: relative;
+.card-inner {
   width: 100%;
   height: 100%;
-  transition: transform 0.6s;
+  position: relative;
   transform-style: preserve-3d;
+  transition: transform 0.6s;
 }
 
-.memory-game .card.flipped .card-inner {
+.card.flipped .card-inner {
   transform: rotateY(180deg);
 }
 
-.memory-game .card-front, .card-back {
+.card-front, .card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   font-size: 2rem;
   border-radius: 8px;
 }
 
-.memory-game .card-front {
+.card-front {
   background: var(--surface-color);
   border: 2px solid #ccc;
 }
 
-.memory-game .card-back {
+.card-back {
   background: var(--accent-color);
   color: white;
   transform: rotateY(180deg);
 }
-
-#start-btn {
-  position: relative;
-  z-index: 1000;
-}
-
