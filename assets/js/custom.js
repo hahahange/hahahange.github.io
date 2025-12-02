@@ -336,6 +336,4 @@ startBtn.addEventListener("click", initGame);
 console.log(startBtn);
 restartBtn.addEventListener("click", initGame);
 difficultySelect.addEventListener("change", initGame);
-
-
-
+console.log(12)
