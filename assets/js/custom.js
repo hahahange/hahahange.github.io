@@ -327,7 +327,7 @@ function checkMatch() {
       card2.classList.remove("flipped");
       flippedCards = [];
       lockBoard = false;
-    }, 1000);
+    }, 10);
   }
 }
 
