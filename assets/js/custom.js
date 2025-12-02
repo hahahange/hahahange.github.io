@@ -210,17 +210,7 @@ function getFormSubmission() {
   if (average < 2.5) color = "red";
   else if (average < 4) color = "yellow";
   else color = "green";
-
-  var output = document.getElementById("result-output");
-  if (!output) {
-    output = document.createElement("div");
-    output.id = "result-output";
-    output.style.marginTop = "15px";
-    x.appendChild(output);
-  }
-
-  output.textContent = resultText;
-  output.style.color = color;
+  console.log(`%c${resultText}`, `color: ${color}; font-weight: bold;`);
 }
 
 
