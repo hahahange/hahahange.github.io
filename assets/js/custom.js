@@ -184,3 +184,17 @@
   });
 
 })();
+
+
+function getFormSubmission() {
+  var x = document.getElementById("contact-form");
+  var values = [];
+
+  for (var i = 0; i < x.length; i++) {
+    values.push(x.elements[i].value);
+  }  
+    for (var i = 0; i < x.length; i++) {
+    console.log(x.elements[i].value);
+  }
+}
+
