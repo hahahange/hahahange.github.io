@@ -149,8 +149,32 @@
 
     </section><!-- /Resume Section -->
 
-     <div id="game-board"></div>
-
+    <section id="memory-game" class="memory-game">
+    <h2>Memory Game</h2>
+  
+    
+    <label for="difficulty">Select Difficulty:</label>
+    <select id="difficulty">
+      <option value="easy">Easy (4x3)</option>
+      <option value="hard">Hard (6x4)</option>
+    </select>
+  
+  
+    <div class="game-controls">
+      <button id="start-btn">Start</button>
+      <button id="restart-btn">Restart</button>
+    </div>
+  
+  
+    <div id="stats">
+      <p>Moves: <span id="moves">0</span></p>
+      <p>Matches: <span id="matches">0</span></p>
+      <p id="win-message"></p>
+    </div>
+  
+  
+    <div id="game-board" class="board"></div>
+</section>
 
 
   </main>
