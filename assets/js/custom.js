@@ -213,129 +213,58 @@ function getFormSubmission() {
   console.log(`%c${resultText}`, `color: ${color}; font-weight: bold;`);
 }
 
-const cardData = ["🌑","🌕","🌘","🌒","🌔","🌘"]; 
 
-let board = document.getElementById("game-board");
-let movesDisplay = document.getElementById("moves");
-let matchesDisplay = document.getElementById("matches");
-let winMessage = document.getElementById("win-message");
-let startBtn = document.getElementById("start-btn");
-let restartBtn = document.getElementById("restart-btn");
-let difficultySelect = document.getElementById("difficulty");
 
-let moves = 0;
-let matches = 0;
+}
+
+const emojis = ["🐶","🐱","🐭","🐹","🐶","🐱","🐭","🐹"];
+let shuffled = emojis.sort(() => Math.random() - 0.5);
+
+const board = document.getElementById("game-board");
 let flippedCards = [];
 let lockBoard = false;
-let currentBoard = [];
-let rows = 3;
-let cols = 4;
 
+shuffled.forEach((emoji) => {
+  const card = document.createElement("div");
+  card.classList.add("card");
 
-function initGame() {
-  moves = 0;
-  matches = 0;
-  flippedCards = [];
-  lockBoard = false;
-  movesDisplay.textContent = moves;
-  matchesDisplay.textContent = matches;
-  winMessage.textContent = "";
+  const cardInner = document.createElement("div");
+  cardInner.classList.add("card-inner");
 
-  if(difficultySelect.value === "easy") {
-    rows = 3;
-    cols = 4;
-  } else {
-    rows = 4;
-    cols = 6;
-  }
-  generateBoard();
-}
+  const front = document.createElement("div");
+  front.classList.add("card-front");
 
+  const back = document.createElement("div");
+  back.classList.add("card-back");
+  back.textContent = emoji;
 
-function generateBoard() {
-  board.innerHTML = "";
-  let totalCards = rows * cols;
-  let neededPairs = totalCards / 2;
+  cardInner.appendChild(front);
+  cardInner.appendChild(back);
+  card.appendChild(cardInner);
+  board.appendChild(card);
 
-  
-  let cardsArray = [];
-  for(let i=0; i<neededPairs; i++){
-    cardsArray.push(cardData[i % cardData.length]);
-    cardsArray.push(cardData[i % cardData.length]);
-  }
-  cardsArray.sort(() => Math.random() - 0.5);
+  card.addEventListener("click", () => {
+    if (lockBoard || card.classList.contains("flipped")) return;
 
-  currentBoard = cardsArray;
+    card.classList.add("flipped");
+    flippedCards.push(card);
 
-
-  board.style.gridTemplateColumns = `repeat(${cols}, auto)`;
- 
-  cardsArray.forEach((item, index) => {
-    let card = document.createElement("div");
-    card.classList.add("card");
-    card.dataset.value = item;
-
-    let cardInner = document.createElement("div");
-    cardInner.classList.add("card-inner");
-
-    let cardFront = document.createElement("div");
-    cardFront.classList.add("card-front");
-    cardFront.textContent = "?";
-
-    let cardBack = document.createElement("div");
-    cardBack.classList.add("card-back");
-    cardBack.textContent = item;
-
-    cardInner.appendChild(cardFront);
-    cardInner.appendChild(cardBack);
-    card.appendChild(cardInner);
-
-    card.addEventListener("click", flipCard);
-    board.appendChild(card);
-  });
-}
-
-
-function flipCard() {
-  if(lockBoard) return;
-  if(this.classList.contains("flipped")) return;
-
-  this.classList.add("flipped");
-  flippedCards.push(this);
-
-  if(flippedCards.length === 2){
-    moves++;
-    movesDisplay.textContent = moves;
-    checkMatch();
-  }
-}
-
-
-function checkMatch() {
-  let [card1, card2] = flippedCards;
-  if(card1.dataset.value === card2.dataset.value){
-    matches++;
-    matchesDisplay.textContent = matches;
-    flippedCards = [];
-    if(matches === currentBoard.length / 2){
-      winMessage.textContent = "🎉 You Won!";
+    if (flippedCards.length === 2) {
+      lockBoard = true;
+      const [first, second] = flippedCards;
+      if (first.querySelector(".card-back").textContent === second.querySelector(".card-back").textContent) {
+        // Match found
+        flippedCards = [];
+        lockBoard = false;
+      } else {
+        setTimeout(() => {
+          first.classList.remove("flipped");
+          second.classList.remove("flipped");
+          flippedCards = [];
+          lockBoard = false;
+        }, 1000);
+      }
     }
-  } else {
-    lockBoard = true;
-    setTimeout(() => {
-      card1.classList.remove("flipped");
-      card2.classList.remove("flipped");
-      flippedCards = [];
-      lockBoard = false;
-    }, 1000);
-  }
-}
-
-
-startBtn.addEventListener("click", initGame);
-console.log(startBtn);
-restartBtn.addEventListener("click", initGame);
-difficultySelect.addEventListener("change", initGame);
-
-
+  });
+});
 
