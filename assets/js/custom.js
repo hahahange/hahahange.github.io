@@ -192,10 +192,35 @@ function getFormSubmission() {
 
   for (var i = 0; i < x.length; i++) {
     values.push(x.elements[i].value);
-  }  
-    for (var i = 0; i < x.length; i++) {
     console.log(x.elements[i].value);
   }
+
+  var name = x.querySelectorAll("input[name='name']")[0].value;
+  var surname = x.querySelectorAll("input[name='name']")[1].value;
+
+  var site = document.querySelector("input[name='site_rating']:checked").value;
+  var work = document.querySelector("input[name='work_rating']:checked").value;
+  var form = document.querySelector("input[name='form_rating']:checked").value;
+
+  var average = ((+site + +work + +form) / 3).toFixed(2);
+
+  var resultText = name + " " + surname + ": " + average;
+
+  var color = "black";
+  if (average < 2.5) color = "red";
+  else if (average < 4) color = "yellow";
+  else color = "green";
+
+  var output = document.getElementById("result-output");
+  if (!output) {
+    output = document.createElement("div");
+    output.id = "result-output";
+    output.style.marginTop = "15px";
+    x.appendChild(output);
+  }
+
+  output.textContent = resultText;
+  output.style.color = color;
 }
 
 
