@@ -195,8 +195,8 @@ function getFormSubmission() {
     console.log(x.elements[i].value);
   }
 
-  var name = x.querySelectorAll("input[name='name']")[0].value;
-  var surname = x.querySelectorAll("input[name='name']")[1].value;
+  var name = x.querySelectorAll("input[name='name']").value;
+  var surname = x.querySelectorAll("input[name='surname']").value;
 
   var site = document.querySelector("input[name='site_rating']:checked").value;
   var work = document.querySelector("input[name='work_rating']:checked").value;
