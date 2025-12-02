@@ -1597,12 +1597,12 @@ section,
 }
 
 .card-front {
-  background: --surface-color;
+  background: var(--surface-color);
   border: 2px solid #ccc;
 }
 
 .card-back {
-  background: --accent-color;
+  background: var(--accent-color);
   color: white;
   transform: rotateY(180deg);
 }
